@@ -1,0 +1,57 @@
+
+#Basic of C Programming
+***********************************************************************************************
+
+Compiler -> Turbo C -> VI Editor () =GCC 
+Operating System -> Windows -> Linux 
+Hardware -> X86 -> X86
+
+
+
+
+
+Human -: Machine Compiler -: .c to .exe IDE -: code written into IDE (Predefine Library) (Notpad without indication)
+
+Native -: Cross Compiler -:
+  Native Compilation -: compile code for running on that system
+  Cross Compiler     -: Compile code for other hasrdware
+
+Windos-: Visual Studio Linux -: VI Terminal
+
+Basic C Language Structure
+
+/* Hellooworld.c */
+
+Include the Header files(Pre Processor Directives)
+Function Prototypes or Function Declaration
+Gloabal Variables 4.Minimum 1 Function 
+
+#include<stdio.h> 
+main() 
+{
+		 local variables
+		logic
+		Call functions
+
+ }
+Other Functions body
+
+
+int my_sum(int , int ) ; // declaration
+
+main() {
+
+int j;
+
+j=my_sum(30,35); // function call
+
+
+}
+int my_sum(int a , int b) // function body //function defination {
+
+return a +b ;
+}
+
+
+
+
