@@ -1,0 +1,251 @@
+0002_Data_Types
+----------------------------------
+
+
+
+Program -: Program is processing of data 
+
+what is data ?
+	Constant data
+	Variable data
+
+Primary data type
+	
+	interger
+	charcter
+	float 
+	double
+	
+Secondary data type
+      Pointer
+      Array
+User defined datatype
+	structure
+	union
+	bitfield
+	
+	
+prototype Varibale name ;
+  
+  int	ch;
+  char ch;
+  float ch;
+  double ch;
+  
+Note -: 1st letter of variable should not be digit .
+
+   char ch1 ,c2h; = correct
+   char 1ww = wrong
+Note 2-: By default variable is signed
+   dat type
+Constant -: 
+
+	char constant
+		
+			'A'..................'Z'
+			'a'....................'z'
+			 '0'..................'9'
+				'@' , '#'
+				
+				
+				
+	integer constsnt
+	
+	 	123 , 0x123 , 0123
+	 	
+	 	Decimal =123
+	 	Hex     =0x123 = 0001 0010 0011 = 
+	 	Octol = 0123     001 010 011 = 0 0101 0011 = 0x53 
+	 	
+	flaot constant ;
+	           
+	            1.4f , -1.55f 
+	            
+	Double constant ;
+	          
+	          1.4534323 , -2.454544
+	          
+	String Constant 
+	
+		"Luzvi"  "Bangalore"          
+	                       	
+*****************************************************************************************
+
+Varibale -:
+
+  charctor ;
+
+Size = 1byte
+Min  =  all 0 = 0
+Max  =  all 1 = 255
+Range = 0 to 255
+
+	0000 0000 = 0
+	1111 1111 =255
+      1 0000 0000 = 0 = 256
+      
+      
+      
+      unsigned char = positive numbers
+      signed char =   positive as well as negative num
+      
+      
+ 1.unsigned char = positive numbers
+   
+   						0...................................................255
+   					
+ 2.signed char =   positive as well as negative num
+ 
+   					
+   						0.....................+127    = 256-127 =>> 129 
+   						
+  (129 -1)= -128...............................0
+
+
+   		
+	Size = 1byte
+	Min  = -128
+	Max  = +127
+	Range = -128 to +127
+      
+===================================================================
+2.How We are storing Negative numbers in memory?
+
+
+
+	signed char ch= -1
+
+	0000 0001 =  ablsolute form of -1
+	
+	1111 1110 = 1's complement of (-1)
+      +
+       0000 0001 = add 1
+       =================
+       1111 1111 =  -1
+       
+       
+ Experiment =:
+ 
+ 
+ signed char ch= 255
+ 
+ 
+ 
+       ch = 0x10000004  memory location stores 1111 1111
+          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+       	
+       	
+       	
+	
+
+
+
+
+	      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 				
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+	
+	
+	
+	      	
+	
+	
+	
