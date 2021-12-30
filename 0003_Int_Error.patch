@@ -1,0 +1,160 @@
+0003_Integer data types
+----------------------------------
+
+
+
+size = 4 bytes = 2^32
+Min = 0
+Max = 2^32 -1 =
+Ranges = 0 to 4G
+
+
+
+  
+
+1.unsigned integer 
+
+   0 to 4G
+
+
+2. signed integer
+
+   -2G to +2G
+   
+   
+   
+   0000 0000	0000 0000	0000 0000	0000 0000 = Min
+   1111 1111	1111 1111	1111 1111	1111 1111 = Max
+   
+   
+   
+3. Float and Double -:
+    IEE standards how real numbers are stored. Sunday.
+    
+    
+    
+  0000 0000	0000 0000  0000 0000 	0000 0100
+    
+    
+    0x 00 00 00 04
+    
+    
+    Approx addess Memory = 100000 = 04
+                           100001 = 00 
+       		    100002 = 00
+       		    100003 = 00
+      Little Endianness =  Lower bytes of data stored in lower bytes of memory
+      Big Endianness    = Lower bytes of data stored in Higher Bytes of memory location
+      
+       Approx addess Memory = 100000 = 00
+                              100001 = 00 
+       		       100002 = 00
+       		       100003 = 04
+       		       
+       		       
+  Format specifier 
+  
+  	%U = unsigned value
+  	%p = Addess of memory
+  	%d = signed and unsigned
+  	%c = char format
+  	%f = float
+  	%lf = double value
+  
+ $ Errors in C
+ 
+ 	1.Compile Time Errors
+ 	2.Runtime Errors
+ 	
+1.Compile Time Errors
+	pre processor
+		missed for headerfile stdio.h
+		  
+	Translator
+		synctatical error 
+			{,
+			semicollon missing
+			
+	Linker 	
+ 	   Predefine function -: strlen
+ 	   Userdefined function -: 
+ 	   
+ 	   
+ 	   
+ 	   
+ 	  int my_func(int , int); => prototype
+ 
+          my_function(23);
+          
+          not defined
+ 
+ 
+ 2. Runtime Error
+ 
+ 1.segmentation fault
+ 	- When a program attempts to access memory location  that is not allowed to access(Un authorised memory access)
+	Ex. Lower order memory access
+	    trying to change constant data	
+	
+ 2. BUs error	 
+ 	Hardware related errors
+ 	Memory not in HW but we are trying to aceess
+ 	
+3 Floating point Exception
+  devide by zero
+  Infinite are not possible .
+  
+  
+  
+   	
+ 	
+ 	
+ 	
+ 	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
+  	       
+       		       
+       		       
+       		       
+       		       
