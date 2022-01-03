@@ -1,0 +1,281 @@
+2. Operators 
+*****************************
+
+1. Arithmetic Operators
+======================================================
+
++
+-
+%
+/
+
+1.Unary arithmetic
+	+X , -Y
+	
+	
+Ex-:
+#include <stdio.h>
+
+int main()
+{
+    int a= -100,b=200; 
+    printf("Hello World");
+    printf("a=%d b=%d\n",-a,-b);
+    printf("Values\n");
+    printf("a=%d  b=%d\n",a,b) ;
+
+    return 0;
+}
+O/p = Hello Worlda=100 b=-200
+Note -: it is not able to modify value of operand.
+
+
+  
+	
+	
+2.Binary Arithmetic
+    a+b, Sum
+    a-b sub
+	a%b Modulo
+	a/b div
+    a*b mul
+	
+Note -: it is not able to modify value of operand.
+
+	
+2. Assignment Operators
+======================================================	
+	Assignment means we have to assign some value to another variable.
+	
+	b= a+b,
+	
+	int a=b=c=10;
+	
+	  =a+b   ==>> Note left side should be operator
+	
+#include <stdio.h>
+
+int main()
+{
+    int a= 100,b=5 ,c=30; 
+    printf("Hello World");
+    
+    c+=a;   // c= c+a = 30+100 new value of c is 130
+    //c=+a;   // c= c+a = 30+100 new value of c is 130
+    printf("a=%d b=%d c=%d\n",a,b,c);
+    
+    return 0;
+}
+
+3. Increment && Decrement Operator
+========================================
+  1. Pre Increment & Pre Decrement
+  2. Post Increment & Post decerement
+  
+  Ex -: 
+     int a= 100,b=5 ,c=30; 
+    //pre -: it do operation(incre && decre and than assigne)
+    //post -:It will assign 1st and than  it do operation(incre && decre and than assigne)
+                            
+    printf(" %d  %d  %d\n",c++,c++,++c);
+					predict= 32(+1)31(+1),31
+                    output = 32  	31    33
+ final C =33 
+                           c =33 
+  
+  c =31;
+
+ printf(" %d  %d  %d\n",c++,++c,++c);
+             Predict=        32   32 31  final c is 33
+						  
+			Actual = 		32  33  33	  final c is 33
+
+
+Code Optimization -: 
+       If post incre/decre  is there than lateast value of operator will update at the end.
+	   
+
+Excersise -:
+how code optimization effects pre increm.decre operators modification in c
+			
+
+
+4. relational operator
+=================================================
+  <  less than
+  <= less than equal to
+  != not equal too
+  == Equal too 
+  > greater than
+  > = greator than equal too
+  
+  if relation is true than it will give result as True(1) = NON Zero
+  if relation is true false it will give result as False(0) = Zero Value
+  
+  Ex =
+  
+#include <stdio.h>
+
+int main()
+{
+    int a= 100,b=5 ,c=30; 
+    
+    printf("Hello World");
+    
+    
+    printf(" %d  %d  %d\n", a<b ,b!=c ,c==30);
+    //      0   1    1            
+    
+    return 0;
+}
+===================================================================================
+
+
+
+4  Logical or Boolean Operator
+
+Logical And  &&
+Logical OR   ||
+Logical Not   !
+
+And Operartion
+
+X Y O/p
+0 0 0
+0 1 0
+1 0 0
+1 1 1
+
+Note -: if both inputs are NON-Zero than and than only ooutput NON- Zero other wise zero value
+
+
+ a= 99, b=30;
+ 
+ 
+ c = a&&b;
+ 
+     NON-Zero && NON-Zero = NON-Zero
+	 
+Ex1 =:	 
+#include <stdio.h>
+
+int main()
+{
+    int a= 100,b=200 ,c ; 
+    printf("Hello World\n");
+    
+    printf("Before : a=%d b=%d\n",a,b);
+    printf("Values\n");
+    c= a && b;
+    printf("Result : a=%d  b=%d c=%d\n",a,b,c) ;
+
+    return 0;
+} 
+output -:
+
+Before : a=100 b=200
+Values
+Result : a=100  b=200 c=1	 
+
+Ex-2 -::
+int main()
+{
+    int a= 100,b=200 ,c, d=50,e=0 ; 
+    printf(" ======== Output ======\n");
+    
+    printf("Before : a=%d b=%d\n",a,b);
+    printf("Values\n");
+    c = e && (b=d);
+    printf("Result : a=%d  b=%d c=%d\n",a,b,c) ;
+
+    return 0;
+}
+ ======== Output ======
+Before : a=100 b=200
+Values
+Result : a=100  b=200 c=0
+
+
+Explaination -:
+a=100, b=200 ,d=0
+
+Note -: if any of opearand is like zero value than it will not consider other operation.
+
+    1st case -:c= a&& (b=50)  -: 
+				Non && (b(50));
+				NON && NON 
+	2st case -:c= d&& (b=50)  -: 
+				Zero && (Expression);
+				Zero  
+
+
+And Operartion
+
+X Y O/p
+0 0 0
+0 1 0
+		  
+Ex-:3
+#include <stdio.h>
+
+int main()
+{
+    int a= 100,b=200 ,c, d=50,e=0 ; 
+    printf(" ======== Output ======\n");
+    
+    printf("Before : a=%d b=%d\n",a,b);
+    printf("Values\n");
+    c = (e!=!1) && (b=d);
+    printf("Result : a=%d  b=%d c=%d\n",a,b,c) ;
+
+    return 0;
+}
+********************************************************
+
+
+	4.2  Logical or Boolean Operator
+
+Logical And  &&
+Logical OR   ||
+Logical Not   !
+
+Logical OR (||) Operartion
+
+X Y O/p
+0 0 0
+0 1 1
+1 0 1
+1 1 1
+
+Note -: if both inputs are Zero than and than only output Zero value other wise Non-Zero value
+
+X Y O/p
+0 0 0 
+0 1 1  
+1 0 1  - Consider
+1 1 1  - consider
+
+Ex-1;
+#include <stdio.h>
+
+int main()
+{
+    int a= 100,b=200 ,c, d=50,e=0 ; 
+    printf(" ======== Output ======\n");
+    
+    printf("Before : a=%d b=%d\n",a,b);
+    printf("Values\n");
+    c = a || (b=d);
+    printf("Result : a=%d  b=%d c=%d\n",a,b,c) ;
+
+    return 0;
+}
+
+ 4.3 Not Operator 
+ 
+    X o/p
+	
+	1 0
+	0 1 
+
+************************************************************************************************************
