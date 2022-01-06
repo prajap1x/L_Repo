@@ -1,0 +1,230 @@
+5 Size of operator
+   sizeif()
+ 
+will give size of variable ;
+
+#include <stdio.h>
+
+int main()
+{
+    char ch='D';
+    int i;
+    printf("\n------------>> Output <<----------\n");
+    
+    printf ("Size =%d %d \n", sizeof(char), sizeof(int) );
+    printf ("Size =%d %d \n", sizeof(ch), sizeof(i) );
+    printf ("Size =%d %d \n", sizeof('D'), sizeof(45) );
+    return 0;
+}
+============================
+
+------------>> Output <<----------
+Size =1 4 
+Size =1 4 
+Size =4 4 
+Why output 'D' is diffrent?
+
+**************************************************
+
+
+Bitwise operator in C
+************************************
+
+
+Bitwise & Binary
+Bitwise | Binary
+Bitwise ^ Binary
+Bitwise ~ unary
+Bitwise << Binary
+Bitwise >> Binary
+
+Bitwise And (&)
+
+x y o/p
+0 0 0    
+0 1 0
+1 0 0
+1 1 1
+
+Ex-1 
+#include <stdio.h>
+
+int main()
+{
+    
+    char ch=10 , ch1=5;
+    printf("-------->> Output << -----------\n");
+   /*
+     And 
+     0000 1010
+     0000 0101
+     =========
+     0000 0000
+   
+   And 
+     0000 1010
+     0000 0101
+     =========
+     0000 1111 = 0x0F = 15
+   
+   
+   */
+   
+   printf("\nBitwise And Result=%d\n",ch & ch1);
+    printf("\nBitwise And Result=%d\n",ch | ch1);
+
+    return 0;
+}
+--------------------------------------------------------
+
+
+5  0000 0101
+8  0000 1000
+-------------------
+
+5&1
+5  0000 0101
+1  0000 0001 
+---------------
+   0000 0001
+   
+   
+  Any number i need check ? Even or odd?
+  8&1
+  
+8  0000 1000
+1  0000 0001
+---------------
+   0000 0000 = 0
+
+Note -: If number Bitwise and operation with 1 and result is 1 than that number is odd.
+		If number Bitwise and operation with 1 and result is 0 than that number is Even.
+		
+#include <stdio.h>
+
+int main()
+{
+    
+    char ch=99;
+    printf("-------->> Output << -----------\n");
+   if(ch & 1==1)
+     printf("Number %d  is Odd\n",ch );
+     else
+     printf("Number %d  is Even\n",ch );
+   
+    return 0;
+}		
+
+Ex-1 =
+#include <stdio.h>
+
+int main()
+{
+    
+    int ch;
+    
+    printf("Enter The number:");
+    scanf("%d",&ch);
+    printf("-------->> Output << -----------\n");
+
+   if(ch & 1==1)
+     printf("Number %d  is Odd\n",ch );
+     else
+   printf("Number %d  is Even\n",ch );
+   
+    return 0;
+}
+-----------------------------------------------
+
+Ex -: Need to check the number is powerof 2 or not.
+
+
+8 = 0000 1000
+10= 0000 1010 = Its not poweroff 2
+
+
+
+Your observation ?
+-:
+take some numbers any number 
+represant binary
+take difference.
+
+7  0000 0111
+8  0000 1000
+9  0000 1001
+
+
+7  0000 0111
+&
+8  0000 1000
+==============
+   0000 00000 = 0
+   
+   
+8  0000 1000
+&
+9  0000 1001
+---------------------   
+   0000 1000 = 9   NON-Zero
+   
+   
+16 0001 0000
+15 0000 1111 
+---------------
+   0000 0000
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int ch;
+    
+    printf("Enter The number:");
+    scanf("%d",&ch);
+    printf("-------->> Output << -----------\n");
+
+   
+   if((ch & (ch-1))==0)
+     printf("Number %d  is poweroff 2\n",ch );
+    else
+     printf("Number %d  is not poweroff 2\n",ch );
+   
+    return 0;
+}
+
+-----------------------------
+Bitwise Shift 
+
+>> , <<
+
+8	 0000 1000 
+ take left shift by 1
+ 
+ 0   0001 0000 =16
+					take right shift by 1
+     0000 1000 = 8
+	 
+	 
+	 0000 1010 = 10
+   0 0001 0100 = 20
+   
+Note -: if number left shift by 1 than it multiply by 2
+Note -: if number right shift by 1 than it devide by 2
+
+
+Ex -:
+     WAP to check 
+	 you need yo scan 2 variable .
+	 
+	 no = 10
+	 pos = 4
+	 
+	 0000 1010
+	 
+	 Bit is 1 or 0 ;
+	==================================================
+
+
+ 
