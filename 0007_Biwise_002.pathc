@@ -1,0 +1,170 @@
+Bit- Wise Operator and Excersise
+==============================================
+
+How to set and clear a bit
+=================================
+
+7654 3210  Position
+----------------
+0000 1010 = 10
+6th bit need to set to 1
+
+0100 1010 =  
+
+And Opearation
+----------------
+x Y Op
+0 0  0 
+0 1  0  -
+1 0  0  - Consider
+1 1  1  - Consider
+
+OR Operation
+-------------------
+x Y Op
+0 0  0
+0 1  1
+1 0  1 - Consider   -- to set 1 
+1 1  1 - Consider
+
+
+
+1
+&
+1
+=======
+1
+
+1
+&
+0
+--------
+0
+
+
+7654 3210  Position
+----------------
+0000 1010 = 10
+6th bit need to set to 1
+
+0100 1010 == Required
+
+ 
+
+OR Operation
+-------------------
+x Y(input) Op
+
+1 	0  		1 - Consider   -- to set 1 
+1 	1  		1 - Consider
+
+Steps
+===========
+7654 3210
+--------------------
+0000 1010 = 10
+0100 0000 =64  OR operation with 64
+-------------------------------
+
+0000 0001 = 1
+if 1<<6
+
+0100 0000 =64 (1<<6)
+
+
+(input) | (1<<6); your 6th bit will be set
+
+result = 0100 1010 = 0x4A
+
+SET-BIT = num | (1<<POS);
+-------------------------------------------------------
+Clear a bit = Set to Zero
+
+7654 3210
+-----------
+0010 1010 =2A = 42
+
+
+What operation with do?
+7654 3210
+--------------
+0010 1010
+&
+1101 1111  ->> Mask
+====================
+
+1101 1111 = Mask
+~
+0010 0000 = 1<<5
+0000 0001 =1
+
+      Result = num & (~(1<<POS ));
+
+CLEAR- BIT = num & (~(1<<POS ));
+========================================
+
+
+
+Example -: 
+-----------
+#include <stdio.h>
+
+int main()
+{
+    char no, pos;
+    printf("Enter no and postion:");
+    scanf("%d%d",&no,&pos);
+    
+    printf("Before No=%d  pos=%d\n",no,pos);
+    printf("\n---->>>> OUTPUT   <<<-------\n");
+    printf("After No=%x  pos=%d\n",(no | 1<<pos),pos);
+    printf("After No=%x  pos=%d\n",(no & ~(1<<pos)),pos);
+    
+    return 0;
+}
+=======================
+
+Exercise -1
+---------------
+   1, number , pos , bits 
+     Input
+	 
+	 00001110  00001110  00001010  00001110 = Any number (25th 26th 27th)
+	 00000000  00001110  00001010  00001110	= clear 3 bts without affecting other
+	 
+	 pos = 25
+	 bits= 3
+	 number = Any integer
+	 
+	 Hint -: 0000 0001
+			 0000 0000 =
+			 invert
+			 1111 1111 =
+			 <<3
+			 1111 1000 =
+			 invert
+			 
+			 0000 0111 =
+			 
+	2.  0000 1111
+	    1110 0000 = rotating 3 bits 
+		
+		How many times position rotation it should align with left side bits.
+		inputs = number, pos
+		
+    Hint -:1111 1111
+	       <<3
+		   1111 1000
+		   invert
+		   0000 0111
+		   And with inputstored 
+		   
+		   right shit number
+		    0001 1111
+			or  (stored number with appropriate left shift)
+			
+			
+			1. take extract (3 bits)
+			2. Right shift number so 1st 3 bits flush out
+			3. Do or opearation with help of left shift for appopriate position
+=======================================================================================
