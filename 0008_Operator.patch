@@ -1,0 +1,137 @@
+0008_Operastors 
+==========================
+Bitwise & Binary
+Bitwise | Binary
+Bitwise ^ Binary
+Bitwise ~ once complement
+Bitwise <<    left shift
+Bitwise  >>    right shift
+
+
+************************************************
+Bitwise ^ Binary
+---------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    
+    
+    unsigned char ch=10 ;
+    
+    printf("\n---->>>> Output <<<<----\n");
+    
+    printf("ch =%d X-OR =%d \n",ch , ch ^ 5);
+
+    return 0;
+}
+========
+
+0000 1010 = 10
+0000 0101 = 05
+================
+0000 1111 =15
+
+---->>>> Output <<<<----
+ch =10 X-OR =15 
+
+----------------------------------
+
+
+Excersise -: Bitwise ~ once complement (Explain)
+
+===========================================================================
+
+* Ternary Operator*
+=======================
+
+
+It takes in a binary condition as input, which makes it similar to an 'if-else' control flow block. It also, however, returns a value, behaving similar to a function.
+
+	result = binaryCondition ? valueReturnedIfTrue : valueReturnedIfFalse;
+
+
+
+Notes -: The ternary cannot be used to execute code. It must be either returned in a function, or set equal to a variable with the same data type as the returned values.
+Note -: It is faster than if else
+
+
+
+ a= 100 , b=30
+ 
+int findMaximum(int a, int b){
+    //if a > b, it returns a, if not it returns b
+    return (a > b) ? a : b;
+}
+
+
+Ex -:
+
+Normal
+=====
+
+#include <stdio.h>
+
+int main()
+{
+    
+    
+    printf("\n---->>>> Output <<<<----\n");
+    
+    int a = 1, b = 2, ans;
+
+    if (a == 1) {
+        if (b == 2) {
+                       ans = 3;
+        } 
+        else{
+                ans = 5;
+        }
+    } else {
+            ans = 0;
+    }
+printf ("Ans =%d\n", ans);
+
+    return 0;
+}
+=============================
+Ternary
+
+
+#include <stdio.h>
+
+int main()
+{
+    
+    
+    printf("\n---->>>> Output <<<<----\n");
+    
+    int a = 1, b = 2, ans;
+
+    ans = (a == 1 ? (b == 2 ? 3 : 5) : 0);
+    
+    printf ("Ans=%d\n", ans);
+}
+
+Condition ? TRUE:FALSE ;
+   a= 20
+   
+   a ? printf("True\n"):printf("False\n");
+   
+   
+ #include <stdio.h>
+
+int main()
+{
+    
+    
+    printf("\n---->>>> Output <<<<----\n");
+    
+    int a = 1, b = 2, ans;
+
+    0?printf("True\n"):printf("False\n");
+    
+    
+}
+====================  
