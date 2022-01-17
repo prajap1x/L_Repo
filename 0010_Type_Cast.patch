@@ -1,0 +1,237 @@
+Type Conversion in C
+===========================
+
+A type cast is basically a conversion from one type to another. There are two types of type conversion:
+
+1.Implicit Type Conversion
+2. Explicite Tpe convertion
+
+
+1.Implicit Type Conversion
+=============================
+bool
+char
+shot int
+unsigned int
+long
+unsigned 
+long long
+float
+double
+long double
+
+
+Also known as ‘automatic type conversion’.
+
+Done by the compiler on its own, without any external trigger from the user.
+
+Generally takes place when in an expression more than one data type is present. In such condition type conversion (type promotion) takes place to avoid loss of data.
+
+All the data types of the variables are upgraded to the data type of the variable with largest data type.
+
+It is possible for implicit conversions to lose information, signs can be lost (when signed is implicitly converted to unsigned), and overflow can occur (when long long is implicitly converted to float).
+
+#include<stdio.h>
+int main()
+{
+    int x = 10;    // integer x
+    char y = 'a';  // character c
+    float z;
+    // y implicitly converted to int. ASCII 
+    // value of 'a' is 97
+    x = x + y;
+     
+    // x is implicitly converted to float
+    z = x + 1.0;
+  
+    printf("x = %d, z = %f", x, z);
+    return 0;
+}
+
+
+2.Explicit Type Conversion–
+==============================================
+
+
+
+
+	Lower_Data_Type  -------------------------Expliciot Type Convertion----------------------------------> Higher_Data_Types
+
+
+
+This process is also called type casting and it is user defined. Here the user can type cast the result to make it of a particular data type.
+
+The syntax in C:
+	
+	
+			(type) expression
+
+
+
+
+// C program to demonstrate explicit type casting
+#include<stdio.h>
+  
+int main()
+{
+    double x = 1.2;
+    int sum;
+    // Explicit conversion from double to int
+     sum= (int)x + 1;
+  
+    printf("sum = %d", sum);
+  
+    return 0;
+}
+
+
+=================================================================
+
+
+
+Advantages of Type Conversion
+
+This is done to take advantage of certain features of type hierarchies or type representations.
+It helps us to compute expressions containing variables of different data types.
+
+
+
+=====================================================================================================
+
+
+Vi Editor
+==============
+
+	To creat Directory 
+				mkdir ABC
+				
+	To creat file 
+				vi Luzvi.c
+				
+				
+	ESC + I      = Insert Mode
+			We can write
+			
+	
+	to save content and come out
+	
+	ESC + :wq!
+	
+	to come out without saving content
+	
+	  ESC + :q!
+
+	remove file
+		rm filename
+	remove directory
+	
+	
+infinite@annu:~/Luzvi$ rm OOO/
+rm: cannot remove 'OOO/': Is a directory
+infinite@annu:~/Luzvi$ rm -r OOO/
+infinite@annu:~/Luzvi$ ls
+
+
+
+why swap file created
+=====================================
+
+infinite@annu:~/Luzvi$ vi 1.c
+
+[1]+  Stopped                 vi 1.c       -<< through CTRL + ZZ
+infinite@annu:~/Luzvi$ ls -la
+total 32
+drwxrwxr-x  4 infinite infinite  4096 Jan 17 19:59 .
+drwxr-xr-x 30 infinite infinite  4096 Jan 17 19:59 ..
+-rw-rw-r--  1 infinite infinite    20 Jan 17 19:58 1.c
+-rw-r--r--  1 infinite infinite 12288 Jan 17 19:59 .1.c.swp
+drwxrwxr-x  2 infinite infinite  4096 Jan 17 19:56 ABC
+drwxrwxr-x  2 infinite infinite  4096 Jan 17 19:52 XYZ
+---------------------------------------------------------------------------
+
+GCC - Compiler
+
+
+
+
+infinite@annu:~/Luzvi$ gcc BB.c -o D
+infinite@annu:~/Luzvi$ ls
+1.c  ABC  a.out  BB.c  D  XYZ
+infinite@annu:~/Luzvi$ ./D 
+sum = 2infinite@annu:~/Luzvi$ 
+
+
+
+==================================================
+
+./  -: Present working DIR
+../ -: Parent working DIR
+pwd -: present working DIR
+CTRL + L -: Clear Screen
+
+
+
+cp - copy
+
+
+cp  source destination
+
+1. reference Path
+================================
+
+infinite@annu:~/Luzvi$ ls
+1.c  ABC  a.out  BB.c  D  GGG.c  XYZ
+infinite@annu:~/Luzvi$ cp BB.c ./XYZ/CC.c
+
+
+
+infinite@annu:~/Luzvi/ABC$ ls
+BB.c  Luzvi
+infinite@annu:~/Luzvi/ABC$ cp BB.c ../XYZ/
+
+
+
+
+infinite@annu:~/Luzvi/XYZ$ cp /home/infinite/Luzvi/ABC/BB.c 
+cp: missing destination file operand after '/home/infinite/Luzvi/ABC/BB.c'
+Try 'cp --help' for more information.
+infinite@annu:~/Luzvi/XYZ$ cp /home/infinite/Luzvi/ABC/BB.c ./
+infinite@annu:~/Luzvi/XYZ$ ls
+BB.c  CC.c
+infinite@annu:~/Luzvi/XYZ$ 
+
+
+
+
+
+
+2. Absolute 
+=============================
+
+infinite@annu:~/LKI$ ls
+bbb-builds  LDD_BBB  LDD_Cap_Assignment  LDD_SysPlay  LDD_Vector  Linux_Source
+infinite@annu:~/LKI$ cp /home/infinite/Luzvi/ABC/BB.c /home/infinite/Luzvi/XYZ/KK.c
+
+
+
+
+
+==================================================================================
+
+0x41    A
+
+0100 0001 
+
+0x61   a
+
+0110 0001
+=======================
+
+
+
+0100 0001
+0110 0001
+==============================================================================================================================================
+
+
+
