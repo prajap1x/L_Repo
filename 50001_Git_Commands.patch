@@ -1,0 +1,13 @@
+esc 2dd : delete two lines
+esc p : undo
+esc :set nu -> put numbers
+how to remove number?
+/main -> goes to main
+/c -> st search for string/character from the cursor
+for next seaarch press n
+esc 3yy -> three lines copied
+esc p -> to paste the line
+
+esc v -> than select content using down arrow key
+= ---> does proper intending
+
