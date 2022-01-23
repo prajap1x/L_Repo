@@ -1,0 +1,101 @@
+CONTROL STATEMENT
+*************************************************************************************
+
+IF-ELSE
+
+1.
+	if(a > b);
+		printf("\na = %d is greater\n",a);
+	else
+		printf("\nb = %d is greater\n",b);
+==================================================
+if.c: In function ‘main’:
+if.c:18:2: error: ‘else’ without a previous ‘if’
+   18 |  else
+      |  ^~~~
+
+2.
+a = 20
+b = 30
+c = 25
+
+if(a>b)
+	if(a>c)
+		a is greater
+	else
+		c is greater
+else
+	if(b>c)
+		b is greater
+	else
+		c is greater
+
+
+**************************************************
+	if (a > b)
+	{
+		if(a > c)
+		{
+			printf("\na is greater");
+
+		}
+		else
+		{
+			printf("\nc is greater");
+		}
+	}
+	else
+	{
+                if(b > c)
+                {
+			printf("\nb is greater");
+                
+                }
+                else
+                {
+                	printf("\nc is greater");
+                }
+
+	}
+=================================================
+Enter a, b and c  : 3
+2
+1
+
+ a = 3
+b = 2
+ c = 1
+
+a is greater
+			
+
+Note: if
+	it checks if condition is true than it executes statement/block else control will go 	to next line
+Note: if-else
+	if conditions is true than it will execute if part
+	otherwise else part
+Note: else-if
+	checks every condition if true than executes that block
+	
+ELSE-IF
+*********************************************************
+syntax :
+if (condition)
+	statement1;
+else if(condtion)
+	statement2;
+
+.
+......
+else
+	statementn;
+	 
+
+Exercise : 
+
+1.Iterative control statement
+	have iteration: periodic times
+2. Uniterative control statement
+	no iteration 
+	
+**********************************************************************************
