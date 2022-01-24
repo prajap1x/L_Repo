@@ -1,0 +1,127 @@
+While
+Note -: there should be one minimum condition
+
+
+sum of digit
+
+1243
+
+
+ reminder = 1243%10 = 3
+ nu\10    = 1243 /10 = 124  
+  
+reminder = 124%10 = 4
+ nu\10    = 124 /10 = 12
+ 
+reminder = 12%10 = 2
+ nu\10    = 12 /10 = 1
+ 
+ reminder = 1%10 = 1
+ nu\10    = 1 /10 = 0  
+  
+   
+Ex -1
+/*
+ * Write a C Program to Find the sum of digits of a given number.
+ *  no 125 = 1+2+5 = 8
+ *
+ */
+
+#include<stdio.h>
+
+int main()
+{
+   int nu= 1243, sum =0 , rem=0;
+
+   while(rem=nu%10,sum=sum+rem,nu)
+   {
+    // rem= nu%10 ;
+    // sum =sum +rem;
+     nu=nu/10;
+
+
+   }
+   printf("Sum= %d\n", sum);
+
+
+}
+
+Note -: It will check always only righ most condition in bracket  -->> while(1>100,nu)
+
+
+
+Do While Loop=
+=====================
+
+Syntax -:
+         do{
+   
+     statments;
+   
+    }while(condition);
+Note -: If condition false it will execute minimum 1 time.
+
+
+
+
+
+#include<stdio.h>
+
+int main()
+{
+   int nu, rem=0 , sum=1111;
+   char input;
+
+   do{
+   
+     printf("Enter Number:");
+     scanf("%d",&nu);
+     
+     printf("No=%d\n",nu);
+ 
+    scanf(" %c",&input);     
+   
+   
+    }while(input=='y');
+
+
+   printf("Sum= %d\n", sum);
+
+
+}
+===============================================================
+
+Excersise -:
+
+for loop=
+
+syntax -:
+
+
+     for(initialization ; condition ; incre/decre)
+     {
+     
+       statements ;
+          
+     
+     }
+     
+Inialization done only one time ;   
+Flow -: 
+
+  initailization
+  condition
+  	statements
+  inc/ decrement
+  condition
+  	statements
+  inc/ decrement
+  	
+  
+Ex- 
+   sum of digit = 1243= 10
+   
+8) Write a C program to print the binary of a given number( +ve or -ve numbers).
+9) Write a C program to reverse the bits of a given number.
+
+  
