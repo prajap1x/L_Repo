@@ -1,0 +1,243 @@
+Switch_Case
+=====================================
+
+Switch case statement evaluates a given expression and based on the evaluated value(matching a certain condition), it executes the statements associated with it. Basically, it is used to perform different actions based on different conditions(cases). 
+
+Switch case statements follow a selection-control mechanism and allow a value to change control of execution.
+They are a substitute for long if statements that compare a variable to several integral values.
+The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+
+Syntax
+------
+
+switch (n)
+{
+    case 1: // code to be executed if n = 1;
+        break;
+    case 2: // code to be executed if n = 2;
+        break;
+    default: // code to be executed if n doesn't match any cases
+}
+
+
+
+Some important keywords:
+
+1) Break: This keyword is used to stop the execution inside a switch block. It helps to terminate the switch block and break out of it.
+
+2) Default: This keyword is used to specify the set of statements to execute if there is no case match.
+
+Note: Sometimes when default is not placed at the end of switch case program, we should use break statement with the default case.
+
+Important Points About Switch Case Statements:  
+*****************************************************
+
+1) The expression provided in the switch should result in a "constant value" otherwise it would not be valid. Some valid expressions for switch case will be,
+
+// Constant expressions allowed
+switch(1+2+23)
+switch(1*2+3%4)
+
+// Variable expression are allowed provided
+// they are assigned with fixed values
+switch(a*b+c*d)
+switch(a+b+c)
+
+2) Duplicate case values are not allowed.
+
+3) The default statement is optional. Even if the switch case statement do not have a default statement, 
+it would run without any problem.
+
+4) The break statement is used inside the switch to terminate a statement sequence. When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.
+
+5) The break statement is optional. If omitted, execution will continue on into the next case. The flow of control will fall through to subsequent cases until a break is reached.
+
+
+6) Nesting of switch statements is allowed, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes the program more complex and less readable. 
+
+7) Switch statements are limited to integer values only in the check condition.
+
+
+Ex -:
+=====
+
+// C program to demonstrate syntax of switch
+#include <stdio.h>
+
+// Driver Code
+int main()
+{
+	int x = 2;
+	switch (x) {
+	case 1:
+		printf("Choice is 1");
+		break;
+	case 2:
+		printf("Choice is 2");
+		break;
+	case 3:
+		printf("Choice is 3");
+		break;
+	default:
+		printf("Choice other than 1, 2 and 3");
+		break;
+	}
+	return 0;
+}
+
+
+=====================================================
+
+
+		*
+		**
+		***
+		****
+		*****
+
+
+Row - I
+Col -J
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j;
+    printf("Hello World\n");
+    
+    
+    
+    for(i=0; i<=5 ; i++)   // col 
+    {
+        
+        for(j=0;j<=i; j++) // row
+        {
+            printf("*");
+            
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j;
+    printf("Hello World\n");
+    
+    
+    
+    for(i=1; i<=5 ; i++)   // col 
+    {
+        
+        for(j=1;j<=i; j++) // row
+        {
+            printf("%u",j);
+            
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+===================================
+
+
+
+Goto -
+==========
+
+This is an unconditional control statement that transfers the flow of control to another part of the
+program.
+
+The goto statement can be used as-
+goto label1;
+    .....
+    ....
+    .....
+    
+label1:
+    statement;
+    
+    
+    
+    
+Here label is any valid C identifier and it is followed by a .colon.
+
+
+
+
+// C program to print numbers
+// from 1 to 10 using goto statement
+#include <stdio.h>
+int main() {
+    
+    
+	int n = 1;
+
+label:
+	printf("%d ",n);
+	n++;
+	
+	if (n <= 10)
+		goto label;
+	
+	
+	
+	return 0;
+}
+
+
+
+
+Ex -:
+
+// C program to print numbers
+// from 1 to 10 using goto statement
+#include <stdio.h>
+int main() {
+    
+    
+	int n = 1;
+
+
+	
+	
+label1:	if (n <= 10)
+		goto label;
+		
+		goto label2;
+		
+		
+label:
+	printf("%d ",n);		
+	n++;
+	
+	goto label1;
+label2:
+    printf("\nExit\n");
+	
+	return 0;
+}
+
+
+Note-: for function call , calling and returning it will take time thats why we are using goto
+Dis -: Goto not having cating arrguments so we can use goto with efficient way..
+
+=========================================
+
+10/02/2022
+
+C in depth - : Upto controll statements -: Line by line and all example
+Git repo   -: 2 assignments (You can take help)
+after 10 feb any day surprise test
