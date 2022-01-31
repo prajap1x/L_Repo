@@ -1,0 +1,124 @@
+Pointers 
+===============
+
+Secondry data type (pointers and array)
+pointer is used to store address of another variable. Which can access indirectly.
+
+syntax -:
+  type *variable_Name
+
+Size of pointer is 4 Bytes
+  
+  
+  int i=20  (1000 address)
+  int *p; // Declaration
+    p=&i;  //Assignment 
+    
+ Another way
+   
+   int *p =&i; (In)tialization  Means    int *p  and p=&i;
+   
+   same int i=20;
+     int i;
+     i=20 ;
+   
+      
+
+Note -: p is interger type pointer which will hold the address of integer.
+
+
+  
+  
+  p  = %d =>> 1000
+  &p = %d =>> 1004
+  *p = *(1000) =: The contents of p will consider as address and from that address it will fetch value.
+  
+  
+  Ex -1
+  =====
+  
+#include <stdio.h>
+
+int main()
+{
+    int i=10,*p;
+    
+    printf("Hello World\n");
+    
+    printf("Before Address -> &i=%x  &p=%x\n",&i,&p);
+    printf("Before Value -> i=%d  p=%x\n",i,p);
+    p=&i;
+    printf("After Address -> &i=%x  &p=%x\n",&i,&p);
+    printf("After Address -> i=%d  p=%x\n",i,p);
+    printf("Dereference *p=%d\n",*p);
+    
+    return 0;
+}
+Output 
+----------
+	Hello World
+	Before Address -> &i=a40fe0bc  &p=a40fe0c0
+	Before Value -> i=10  p=a40fe1c0
+	After Address -> &i=a40fe0bc  &p=a40fe0c0
+	After Address -> i=10  p=a40fe0bc
+	Dereference *p=10
+
+-------------------------------------------------
+
+
+
+Ex-1 ;
+=====
+#include <stdio.h>
+
+int main()
+{
+    int i=10,*p;
+    
+    printf("Hello World\n");
+    
+    printf("Before Address -> &i=%x  &p=%x\n",&i,&p);
+    printf("Before Value -> i=%d  p=%x\n",i,p);
+    p=&i;
+    
+    *p=100;
+    
+    printf("After Address -> &i=%x  &p=%x\n",&i,&p);
+    printf("After Address -> i=%d  p=%x\n",i,p);
+    printf("Dereference *p=%d\n",*p);
+    
+    return 0;
+}
+
+=================
+Increments of pointer
+Ex-1
+#include <stdio.h>
+
+int main()
+{
+    int i=10,j=20,*p;
+    
+    printf("Hello World\n");
+    
+    printf("Before Address -> &i=%x  &j=%x &p=%x\n",&i,&j,&p);
+    printf("Before Value -> i=%d  p=%x\n",i,p);
+    p=&i;
+    p++;    
+    
+    printf("After Address -> &i=%x  &p=%x\n",&i,&p);
+    printf("After Address -> i=%d  p=%x\n",i,p);
+    printf("Dereference *p=%d\n",*p);
+    
+    return 0;
+}
+Output
+---------
+
+	Hello World
+	Before Address -> &i=9e00b138  &j=9e00b13c &p=9e00b140
+	Before Value -> i=10  p=9e00b240
+	After Address -> &i=9e00b138  &p=9e00b140
+	After Address -> i=10  p=9e00b13c
+	Dereference *p=20
+	
