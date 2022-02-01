@@ -1,0 +1,86 @@
+Pointers_02 
+===============
+
+Ex -: #include <stdio.h>
+
+int main()
+{
+    int i=10,*p; 
+    char *ch;
+    
+    printf("Hello World\n");
+    
+    printf("Before Address -> &i=%x  &p=%x  &ch=%x\n",&i,&p,&ch);
+    printf("Before Value -> i=%d  p=%x\n",i,p);
+    p=&i;
+    ch = &i;
+    printf("After Address -> &i=%x  &p=%x  &ch=%x\n",&i,&p ,&ch);
+    printf("After Address -> i=%d  p=%x\n ch=%x\n",i,p,ch);
+    printf("Dereference *p=%d\n *ch=%d\n",*p,*ch);
+    
+    return 0;
+}
+
+output -
+-------------
+Hello World
+Before Address -> &i=29b3d404  &p=29b3d408  &ch=29b3d410
+Before Value -> i=10  p=8013d0a0
+After Address -> &i=29b3d404  &p=29b3d408  &ch=29b3d410
+After Address -> i=10  p=29b3d404
+ ch=29b3d404
+Dereference *p=10
+ *ch=10
+ 
+Difference -:
+
+
+0000 0000	0000 0000	0000 0001	0000 0001 =257	 
+
+0x01003      0x01002	0x01001      0x01000   = address
+
+
+
+int pointer p=&i = 0x01000 it will fetch 4 byte of data. 
+char pointer ch=&i = 0x01000 it will fetch 1 byte of data at a time.
+
+Note -: if we increment integer pointer  
+              integer pointer addrees + 1 * (size of the datatype)
+                   int p = p + (1*4)
+                   char ch= ch + (1*1) 
+ 
+0000 0000	0000 0000	0000 0001	0000 0001 =257	 
+									0000 1010 = 256 +8 +2 = 266
+0x01003      0x01002	0x01001      0x01000   = address
+ 
+ 
+Ex- 2
+------
+#include <stdio.h>
+
+int main()
+{
+    int i=257,*p,x; 
+    char *ch;
+    printf("Hello World = i=%d\n", i);
+    p=ch=&i;
+    *ch=10;
+    printf("*p=%d\n i=%d\n", *p,i);
+    
+    for(x=0; x<4; x++)
+      {
+          printf("ch=%d\n",*ch);
+          ch=ch+1;
+      }
+
+    return 0;
+} 
+Output -:
+----------
+Hello World = i=257
+*p=266
+ i=266
+ch=10
+ch=1
+ch=0
+ch=0
