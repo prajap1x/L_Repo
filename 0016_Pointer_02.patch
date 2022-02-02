@@ -1,0 +1,168 @@
+DEFINATION
+Application
+Syntax
+Integer , char, float, double pointer
+Increment/ Decrement of pointer
+Different typess of pointer declaration(constant)
+Void and NULL pointer
+
+
+
+Ex -: 
+int i=100;
+int *p=&i;
+
+p++; --> p=p+1(4)
+int p[20] = p++;  --> Array constant pointer so increment of array is not possible;
+
+p+i = p+0 ,p+1 ,
+
+
+
+Ex--
+=====
+
+
+1. int * const p; -: p is constant pointer which is integer type.  == content of p (address) is constant
+======================================================================
+#include <stdio.h>
+
+int main()
+{
+    
+    int i=100,j=200;
+    int *const p=&i;
+
+    printf("Hello World\n");
+
+    printf("Before Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+    //*p= 255;
+    p=&j;
+    
+    printf("After Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+
+    return 0;
+}
+
+error: assignment of read-only variable ‘p’
+   23 |     p=&j;
+
+
+Note -: P is constant which is integer type
+	Content of p we cant modify, but we can modify the value pointed by p( in memory location )
+===============================================================================================================
+
+
+2. int const *p; -:  p is pointer but p holding the value is constant ==>>  value
+===========================================================================================================
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int i=100,j=200;
+    int const *p=&i;
+
+    printf("Hello World\n");
+
+    printf("Before Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+    
+    p=&j;  // possible
+    j=255; // possible
+    
+    *p=500;  // not posible 
+     
+    printf("After Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+
+    return 0;
+}
+error: assignment of read-only location ‘*p’
+   25 |     *p=500;
+   
+====================================================================================   
+   
+   
+Note-: #include <stdio.h>
+
+int main()
+{
+    
+    int i=100,j=200;
+    int  *const p; // Assigne some garbadge value of p 1st time
+
+    printf("Hello World\n");
+
+    printf("Before Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+    p=&j;  // Errors
+
+
+    printf("After Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+
+    return 0;
+}   
+
+Note -: whenever pointer is constant we need to assign at the time of declaration(initialization)
+
+2. int const * const p; -:   both value and pointer are constant
+===========================================================================================================
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int i=100,j=200;
+    int  const *const p = &i;
+
+    printf("Hello World\n");
+
+    printf("Before Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+    //i=255;  // posibble
+    //*p=500;  // not possible because pointing to constant *p (pointer pointing to the value is constant)
+    p=&j ;   //not possible because const p (pointer is constant)
+
+
+    printf("After Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+
+    return 0;
+}
+
+------------------------------------------------------------------
+Special case -:
+======================
+
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int const i=100,j=200;
+    int   * p = &i;
+
+    printf("Hello World\n");
+
+    printf("Before Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+    *p=20;  
+
+    printf("After Contents ofi=%d &i=%d j=%d &j=%d p=%d, *p=%d\n",i,&i,j,&j,p,*p);
+    
+
+    return 0;
+}
+
+
+
+Note -: *p=20 possible because it is accessing indirectly by memory address.
+
+
