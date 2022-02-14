@@ -1,0 +1,55 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include<stdio.h>
+int main()
+{
+int a[]={1,2,36,46,78,100,32,77,34,28,54,3,4,5,56,89,98},i,ele; // Declaration
+int s,b,ss,sb;
+//1st step
+printf("Size of a=%d\n",sizeof(a));
+printf("Size of element=%d\n",sizeof(a[0]));
+ele= sizeof(a)/sizeof(a[0]);
+printf("element=%d\n",ele);
+
+// 2nd step
+for(i=0 ;i<ele ;i++)
+{
+printf("a[%d]=%d value = %d\n",i,&a[i],a[i]);
+}
+
+//3rd step logic
+ s=b=ss=sb=a[0];
+for(i=1 ; i<ele ;i++)
+{
+   if(a[i] > b )
+  {
+      sb= b;
+      b=a[i];
+  }
+  if(a[i]<b && a[i] > sb)
+  {
+      sb=a[i];
+  }
+  if(a[i] < s )
+  {
+      ss=s;
+      s=a[i];
+  }
+  if(a[i] > s && a[i] < ss)
+  {
+      /* s= 8  ss=12
+         a[i] = 10
+     */
+      ss=a[i];
+  }
+}   
+   printf("Small=%d  second small =%d  Big=%d second big=%d\n",s,ss,b,sb);
+
+return 0;
+}
