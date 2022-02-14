@@ -1,0 +1,183 @@
+Arrays -:
+--------------------
+Secondray data type -: Array and Pointer
+Array -: Group of simmilar data type;
+Array Name Represent base address.
+
+
+
+int A[5]; -: a is array of 5 integer
+char ch[5]; -: ch is aaary of 5 char
+float f[5];
+double d[5];
+
+
+
+Ex -:
+-----
+#include <stdio.h>
+
+
+
+int main()
+{
+int a[5]={1,2,3,4,5}, i; // Declaration
+printf("Hello World\n");
+for(i=0 ;i<5 ;i++)
+{
+printf("a[%d]=%d value = %d\n",i,&a[i],a[i]);
+}
+return 0;
+}
+-------
+o/p
+----
+Hello World
+a[0]=-2049019024 value = 1
+a[1]=-2049019020 value = 2
+a[2]=-2049019016 value = 3
+a[3]=-2049019012 value = 4
+a[4]=-2049019008 value = 0
+
+
+
+Ex-1
+----
+#include <stdio.h>
+
+
+
+int main()
+{
+int a[5]={1,2,3,4,5}, i ,*p; // Declaration
+printf("Size of a=%d\n",sizeof(a));
+printf("Size of element=%d\n",sizeof(a[0]));
+printf("Hello World\n");
+for(i=0 ;i<5 ;i++)
+{
+printf("a[%d]=%d value = %d\n",i,&a[i],a[i]);
+}
+return 0;
+}
+---
+o/p
+
+
+
+Size of a=20
+Size of element=4
+Hello World
+a[0]=-528168528 value = 1
+a[1]=-528168524 value = 2
+a[2]=-528168520 value = 3
+a[3]=-528168516 value = 4
+a[4]=-528168512 value = 5
+----------------------------------
+
+
+
+Ex-3
+-----
+#include <stdio.h>
+
+
+
+int main()
+{
+int a[]={1,2,3,4,5,56,89,98},i,ele; // Declaration
+
+printf("Size of a=%d\n",sizeof(a));
+printf("Size of element=%d\n",sizeof(a[0]));
+ele= sizeof(a)/sizeof(a[0]);
+printf("element=%d\n",ele);
+for(i=0 ;i<ele ;i++)
+{
+printf("a[%d]=%d value = %d\n",i,&a[i],a[i]);
+}
+return 0;
+}
+
+
+
+Size of a=32
+Size of element=4
+element=8
+a[0]=888811312 value = 1
+a[1]=888811316 value = 2
+a[2]=888811320 value = 3
+a[3]=888811324 value = 4
+a[4]=888811328 value = 5
+a[5]=888811332 value = 56
+a[6]=888811336 value = 89
+a[7]=888811340 value = 98
+----------------
+
+
+
+Exersise -:
+int p[10];
+scnaf("%d",&p[i]) //
+
+scan value and print;
+------------------------
+int p[5];
+
+
+
+p=p+1; // Error
+
+Note -: " We can't change the base address of an array because it is the
+constant with the help of which the compiler refers to all the
+elements held by the array . "
+
+
+
+
+
+Ex 4 -- Small and Big
+--------------------------
+#include <stdio.h>
+
+
+
+int main()
+{
+int a[]={1,2,36,46,78,100,32,77,34,28,54,3,4,5,56,89,98},i,ele; // Declaration
+int small,big;
+//1st step
+printf("Size of a=%d\n",sizeof(a));
+printf("Size of element=%d\n",sizeof(a[0]));
+ele= sizeof(a)/sizeof(a[0]);
+printf("element=%d\n",ele);
+
+// 2nd step
+for(i=0 ;i<ele ;i++)
+{
+printf("a[%d]=%d value = %d\n",i,&a[i],a[i]);
+}
+//3rd step logic
+small=big=a[0];
+for(i=1 ; i<ele ;i++)
+{
+if(a[i]<small)
+small=a[i];
+if(a[i]>big)
+big=a[i];
+}
+// 4th step
+printf("Small=%d Big=%d\n",small,big);
+
+return 0;
+}
+------------------------------
+Excersise -:
+------------
+second smallest, second biggest element;
+=============================================
+try
+int a[10] ={2,2,2,4,5,2,3,4,5,3}
+each element how many times present ?
+
+hint-: dublicate elemet is comes just delete element;
+effect; -: need to decrese element sise
+int a[10] ={2,2,4,5,2,3,4,5,3} // if delete again need to check that index
