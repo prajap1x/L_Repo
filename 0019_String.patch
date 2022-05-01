@@ -1,0 +1,98 @@
+== String
+========================
+String -: String is nothing but character array ended with '\0';
+
+
+int main()
+{
+    //char ch[10]={'A','N','i','l','\0'};
+    char ch[10]="Anil";
+    ch[2]=0;
+    int j;
+    
+    for(j=0; j<=10 ;j++)
+    printf("%c  %d\n",ch[j],ch[j]);    
+    
+    printf("Hello World =%s",ch);
+   
+    return 0;
+}
+
+No
+-------------------
+
+
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+int my_function(char []);
+int main()
+{
+    char ch[25]="Anil Prajapati";
+    
+    int j;
+    
+    j=my_function(ch);
+    printf("Length =%d",j);
+   
+    return 0;
+}
+int my_function(char p[])
+{
+    int i;
+    for(i=0;p[i]!='\0';i++)
+        ;
+   return i;        
+}
+
+---------------
+1. 
+   strchar =
+             ch[20]= "ANIL PRajapati"
+			 c =P;
+			 return = 6
+    1st accurance of charactor
+2. 
+   strrchar =
+             ch[20]= "ANIL PRajapati"
+			 c =P;
+			 return = 12
+ Last accurance of charactor
+
+
+3  Strcmp
+       s[20] = ANIL Prajapati
+       s1[20] = ANIL Prajapati
+        
+		1.case =  equal return 0
+		
+	s[20] = ANIL Prajapati
+       s1[20] = ANIL PraJapati
+        
+		2.case =  equal return -1
+		
+	s[20] = ANIL Prajapati
+       s1[20] = ANIL praJapati
+        
+		3.case =  equal return +1
+		
+		int my_function(char ch[],char ch[])
+		
+4 . 
+    strcat ;
+          s[50] = ANIL P
+         s1[20] = ANIL praJapati
+		 
+		 output =s[50] ->>ANIL P + ANIL praJapati
+		           
+				     ANIL PANIL praJapati
+		 
+            char[] my_function(char ch[],char ch[])
+	
+     
+
+		
+		
+			
+		
